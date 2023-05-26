@@ -20,6 +20,7 @@ class ReactComponentAntd extends BaseTemplateGenerator {
       return `features/${this.answers.feature}/${this.answers.atomicType}s`;
     }
 
+    return `src/ui/${this.answers.atomicType}s`;
     // todo care for correct directory path
 
     return `${this.answers.atomicType}s`;
@@ -54,22 +55,18 @@ class ReactComponentAntd extends BaseTemplateGenerator {
           { name: 'Template - Generic layout for a type of page', value: 'template' },
           { name: 'Page - Instance of a template with real content', value: 'page' }
         ]
-      },
-      {
-        type: 'input',
-        name: 'feature',
-        message: 'In which feature should the component be placed? Leave empty for no feature.',
-        default: ''
       }
     ]);
     this.answers.addStorybookFile = true;
     this.answers.enableMobxObserver = false;
+    this.answers.features = '';
     /** To get antd component used to import from antd */
     this.answers.antdComponentName = this.answers.name.replace(this.answers.componentPrefix, '');
   }
 
   //  Where you write the generator specific files (routes, controllers, etc)
   public writing(): void {
+    this.folderName;
     this.copyTemplateToDestination(this.folderName);
   }
 
