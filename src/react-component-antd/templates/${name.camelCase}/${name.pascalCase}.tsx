@@ -1,10 +1,10 @@
-import { ConfigProvider, <%= antdComponentName.pascalCase %> } from 'antd';
+import { ConfigProvider, <%= antdComponentName.pascalCase %> as <%= antdComponentName.pascalCase %>Base } from 'antd';
 import React from 'react';
 import styled from 'styled-components';
 import { RfsAntdTheme } from '../../styles/RfsAntdTheme';
 import I<%= name.pascalCase %>Props from './I<%= name.pascalCase %>Props';
 
-const Styled<%= name.pascalCase %> = styled(<%= antdComponentName.pascalCase %>)<I<%= name.pascalCase %>Props>``;
+const Styled<%= antdComponentName.pascalCase %>Base = styled(<%= antdComponentName.pascalCase %>Base)<I<%= name.pascalCase %>Props>``;
 
 const <%= name.pascalCase %>: React.FC<I<%= name.pascalCase %>Props> = ({ ...props }) => (
   <ConfigProvider
@@ -16,10 +16,7 @@ const <%= name.pascalCase %>: React.FC<I<%= name.pascalCase %>Props> = ({ ...pro
       },
     }}
   >
-    <Styled<%= name.pascalCase %>
-      className="<%= name.pascalCase %>"
-      {...props}
-    />
+    <Styled<%= antdComponentName.pascalCase %>Base className="<%= name.pascalCase %>" {...props} />
   </ConfigProvider>
 );
 
