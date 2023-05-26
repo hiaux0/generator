@@ -38,12 +38,12 @@ class ReactComponentAntd extends BaseTemplateGenerator {
         name: 'name',
         message: 'Component name'
       },
-      {
-        type: 'input',
-        name: 'componentPrefix',
-        message: 'What component prefix are you using? (Enter, if not using any)',
-        default: ''
-      },
+      // {
+      //   type: 'input',
+      //   name: 'componentPrefix',
+      //   message: 'What component prefix are you using? (Enter, if not using any)',
+      //   default: ''
+      // },
       {
         type: 'list',
         name: 'atomicType',
@@ -61,6 +61,7 @@ class ReactComponentAntd extends BaseTemplateGenerator {
     this.answers.enableMobxObserver = false;
     this.answers.features = '';
     /** To get antd component used to import from antd */
+    this.answers.componentPrefix = 'Rfs';
     this.answers.antdComponentName = this.answers.name.replace(this.answers.componentPrefix, '');
   }
 
