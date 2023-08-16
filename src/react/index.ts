@@ -8,6 +8,7 @@ class React extends BaseSelectionGenerator {
 
     this.generators = [
       new GeneratorSelection('Component', 'wemogy:react-component'),
+      new GeneratorSelection('Component (Antd)', 'wemogy:react-component-antd'),
       new GeneratorSelection('New ReactBase-like component (For your project)', 'wemogy:reactbase-component-external'),
       new GeneratorSelection('New ReactBase component (For ReactBase itself)', 'wemogy:reactbase-component-internal'),
       new GeneratorSelection(
